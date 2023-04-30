@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{18F81BAB-ACFD-46CA-AF14-8ACC4D4BC75B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{77617D01-9A29-4DD4-B397-47F6FB888D6C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GihanSoft.Framework", "src\GihanSoft.Framework\GihanSoft.Framework.csproj", "{3FC72A2A-E8B1-4B54-9D57-281CF5354AF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[root]", "[root]", "{18137489-7A4C-47B4-9D2C-BB6BEEB919A6}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		.gitmodules = .gitmodules
+		AssemblyInfo.cs = AssemblyInfo.cs
+		BannedSymbols.txt = BannedSymbols.txt
+		global.json = global.json
+		LICENSE.txt = LICENSE.txt
+		nuget.config = nuget.config
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FC72A2A-E8B1-4B54-9D57-281CF5354AF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FC72A2A-E8B1-4B54-9D57-281CF5354AF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FC72A2A-E8B1-4B54-9D57-281CF5354AF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FC72A2A-E8B1-4B54-9D57-281CF5354AF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3FC72A2A-E8B1-4B54-9D57-281CF5354AF9} = {18F81BAB-ACFD-46CA-AF14-8ACC4D4BC75B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A517992-09AB-4C21-9188-222BD8BE071F}
+	EndGlobalSection
+EndGlobal
