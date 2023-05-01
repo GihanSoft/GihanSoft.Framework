@@ -56,18 +56,18 @@ public static class InitializerHelper
         return RunInitializersAsync(serviceProvider, typeof(TMarkerType).Assembly);
     }
 
-    public static Task RunInitializersAsync<T1, T2>(IServiceProvider serviceProvider)
+    public static Task RunInitializersAsync<TMarker1, TMarker2>(IServiceProvider serviceProvider)
     {
-        return RunInitializersAsync(serviceProvider, typeof(T1).Assembly, typeof(T2).Assembly);
+        return RunInitializersAsync(serviceProvider, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly);
     }
 
-    public static Task RunInitializersAsync<T1, T2, T3>(IServiceProvider serviceProvider)
+    public static Task RunInitializersAsync<TMarker1, TMarker2, TMarker3>(IServiceProvider serviceProvider)
     {
-        return RunInitializersAsync(serviceProvider, typeof(T1).Assembly, typeof(T2).Assembly, typeof(T3).Assembly);
+        return RunInitializersAsync(serviceProvider, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly, typeof(TMarker3).Assembly);
     }
 
-    public static Task RunInitializersAsync<T1, T2, T3, T4>(IServiceProvider serviceProvider)
+    public static Task RunInitializersAsync<TMarker1, TMarker2, TMarker3, TMarker4>(IServiceProvider serviceProvider)
     {
-        return RunInitializersAsync(serviceProvider, typeof(T1).Assembly, typeof(T2).Assembly, typeof(T3).Assembly, typeof(T4).Assembly);
+        return RunInitializersAsync(serviceProvider, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly, typeof(TMarker3).Assembly, typeof(TMarker4).Assembly);
     }
 }

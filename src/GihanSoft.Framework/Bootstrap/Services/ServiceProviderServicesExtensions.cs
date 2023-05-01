@@ -39,23 +39,23 @@ public static class ServiceProviderServicesExtensions
         return AddFromServiceDescriptionProviders(services, serviceProvider, types.Select(t => t.Assembly));
     }
 
-    public static IServiceCollection AddFromServiceDescriptionProviders<TMarkerType>(this IServiceCollection services, IServiceProvider serviceProvider)
+    public static IServiceCollection AddFromServiceDescriptionProviders<TMarker>(this IServiceCollection services, IServiceProvider serviceProvider)
     {
-        return AddFromServiceDescriptionProviders(services, serviceProvider, typeof(TMarkerType).Assembly);
+        return AddFromServiceDescriptionProviders(services, serviceProvider, typeof(TMarker).Assembly);
     }
 
-    public static IServiceCollection AddFromServiceDescriptionProviders<T1, T2>(this IServiceCollection services, IServiceProvider serviceProvider)
+    public static IServiceCollection AddFromServiceDescriptionProviders<TMarker1, TMarker2>(this IServiceCollection services, IServiceProvider serviceProvider)
     {
-        return AddFromServiceDescriptionProviders(services, serviceProvider, typeof(T1).Assembly, typeof(T2).Assembly);
+        return AddFromServiceDescriptionProviders(services, serviceProvider, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly);
     }
 
-    public static IServiceCollection AddFromServiceDescriptionProviders<T1, T2, T3>(this IServiceCollection services, IServiceProvider serviceProvider)
+    public static IServiceCollection AddFromServiceDescriptionProviders<TMarker1, TMarker2, TMarker3>(this IServiceCollection services, IServiceProvider serviceProvider)
     {
-        return AddFromServiceDescriptionProviders(services, serviceProvider, typeof(T1).Assembly, typeof(T2).Assembly, typeof(T3).Assembly);
+        return AddFromServiceDescriptionProviders(services, serviceProvider, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly, typeof(TMarker3).Assembly);
     }
 
-    public static IServiceCollection AddFromServiceDescriptionProviders<T1, T2, T3, T4>(this IServiceCollection services, IServiceProvider serviceProvider)
+    public static IServiceCollection AddFromServiceDescriptionProviders<TMarker1, TMarker2, TMarker3, TMarker4>(this IServiceCollection services, IServiceProvider serviceProvider)
     {
-        return AddFromServiceDescriptionProviders(services, serviceProvider, typeof(T1).Assembly, typeof(T2).Assembly, typeof(T3).Assembly, typeof(T4).Assembly);
+        return AddFromServiceDescriptionProviders(services, serviceProvider, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly, typeof(TMarker3).Assembly, typeof(TMarker4).Assembly);
     }
 }
