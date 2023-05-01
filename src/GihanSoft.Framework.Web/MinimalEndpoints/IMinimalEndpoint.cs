@@ -7,7 +7,7 @@ public interface IMinimalEndpoint
     string Pattern { get; }
     IEnumerable<HttpMethod> HttpMethods { get; }
 
-    void ConfigureEndpoint(IEndpointConventionBuilder endpointConventionBuilder);
+    void ConfigureEndpoint(IEndpointConventionBuilder builder);
 
     static abstract Delegate Handler { get; }
 }
