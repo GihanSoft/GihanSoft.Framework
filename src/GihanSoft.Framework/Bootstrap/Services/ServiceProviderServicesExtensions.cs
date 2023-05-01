@@ -6,7 +6,7 @@ namespace Microsoft.Extensions.DependencyInjection;
 
 public static class ServiceProviderServicesExtensions
 {
-    public static IServiceCollection AddFromServiceDescriptionProviders(
+    public static IServiceCollection AddServiceSetups(
         this IServiceCollection services,
         IServiceProvider serviceProvider,
         IEnumerable<Assembly> assemblies)
@@ -26,17 +26,17 @@ public static class ServiceProviderServicesExtensions
 
     public static IServiceCollection AddFromServiceDescriptionProviders(this IServiceCollection services, IServiceProvider serviceProvider, params Assembly[] assemblies)
     {
-        return AddFromServiceDescriptionProviders(services, serviceProvider, assemblies.AsEnumerable());
+        return AddServiceSetups(services, serviceProvider, assemblies.AsEnumerable());
     }
 
     public static IServiceCollection AddFromServiceDescriptionProviders(this IServiceCollection services, IServiceProvider serviceProvider, IEnumerable<Type> types)
     {
-        return AddFromServiceDescriptionProviders(services, serviceProvider, types.Select(t => t.Assembly));
+        return AddServiceSetups(services, serviceProvider, types.Select(t => t.Assembly));
     }
 
     public static IServiceCollection AddFromServiceDescriptionProviders(this IServiceCollection services, IServiceProvider serviceProvider, params Type[] types)
     {
-        return AddFromServiceDescriptionProviders(services, serviceProvider, types.Select(t => t.Assembly));
+        return AddServiceSetups(services, serviceProvider, types.Select(t => t.Assembly));
     }
 
     public static IServiceCollection AddFromServiceDescriptionProviders<TMarker>(this IServiceCollection services, IServiceProvider serviceProvider)
