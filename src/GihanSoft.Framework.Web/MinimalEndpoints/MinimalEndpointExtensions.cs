@@ -20,9 +20,10 @@ public static class MinimalEndpointExtensions
 
         foreach (var t in types)
         {
+            using var scope = endpointRouteBuilder.ServiceProvider.CreateScope();
+
             var handler = t.GetProperty(nameof(IMinimalEndpoint.Handler))?.GetValue(null) as Delegate ??
                 throw new InvalidOperationException($"handler of minimal endpoint in type '{t.FullName}' is null");
-            using var scope = endpointRouteBuilder.ServiceProvider.CreateScope();
 
             var endpoint = (IMinimalEndpoint)ActivatorUtilities.CreateInstance(scope.ServiceProvider, t);
             var routeHandlerBuilder = endpointRouteBuilder.MapMethods(endpoint.Pattern, endpoint.HttpMethods.Select(m => m.Method), handler);
