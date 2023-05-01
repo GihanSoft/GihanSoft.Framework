@@ -23,8 +23,13 @@ public static class InitializerHelper
             {
                 async Task RunInit()
                 {
-                    await using var scope = serviceProvider.CreateAsyncScope().ConfigureAwait(false);
-                    await ((IInitializer)ActivatorUtilities.CreateInstance(serviceProvider, type)).InitializeAsync().ConfigureAwait(false);
+                    var scope = serviceProvider.CreateAsyncScope();
+                    await using (scope.ConfigureAwait(false))
+                    {
+                        await ((IInitializer)ActivatorUtilities.CreateInstance(scope.ServiceProvider, type))
+                            .InitializeAsync()
+                            .ConfigureAwait(false);
+                    }
                 }
 
                 return RunInit();
