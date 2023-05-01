@@ -28,23 +28,23 @@ public static class InitializerWebApplicationExtensions
         return RunInitializersAsync(app, types.Select(t => t.Assembly));
     }
 
-    public static Task RunInitializersAsync<TMarkerType>(this WebApplication app)
+    public static Task RunInitializersAsync<TMarker>(this WebApplication app)
     {
-        return RunInitializersAsync(app, typeof(TMarkerType).Assembly);
+        return RunInitializersAsync(app, typeof(TMarker).Assembly);
     }
 
-    public static Task RunInitializersAsync<T1, T2>(this WebApplication app)
+    public static Task RunInitializersAsync<TMarker1, TMarker2>(this WebApplication app)
     {
-        return RunInitializersAsync(app, typeof(T1).Assembly, typeof(T2).Assembly);
+        return RunInitializersAsync(app, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly);
     }
 
-    public static Task RunInitializersAsync<T1, T2, T3>(this WebApplication app)
+    public static Task RunInitializersAsync<TMarker1, TMarker2, TMarker3>(this WebApplication app)
     {
-        return RunInitializersAsync(app, typeof(T1).Assembly, typeof(T2).Assembly, typeof(T3).Assembly);
+        return RunInitializersAsync(app, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly, typeof(TMarker3).Assembly);
     }
 
-    public static Task RunInitializersAsync<T1, T2, T3, T4>(this WebApplication app)
+    public static Task RunInitializersAsync<TMarker1, TMarker2, TMarker3, TMarker4>(this WebApplication app)
     {
-        return RunInitializersAsync(app, typeof(T1).Assembly, typeof(T2).Assembly, typeof(T3).Assembly, typeof(T4).Assembly);
+        return RunInitializersAsync(app, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly, typeof(TMarker3).Assembly, typeof(TMarker4).Assembly);
     }
 }
