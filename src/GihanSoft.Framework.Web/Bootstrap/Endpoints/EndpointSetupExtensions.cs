@@ -24,7 +24,7 @@ public static class EndpointSetupExtensions
             using var scope = endpointRouteBuilder.ServiceProvider.CreateScope();
 
             var setup = (IEndpointSetup)ActivatorUtilities.CreateInstance(scope.ServiceProvider, t);
-            setup.MapEndpoints(endpointRouteBuilder);
+            setup.ConfigureEndpoints(endpointRouteBuilder);
         }
 
         return endpointRouteBuilder;

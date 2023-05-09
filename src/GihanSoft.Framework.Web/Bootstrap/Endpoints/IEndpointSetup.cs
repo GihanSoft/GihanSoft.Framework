@@ -4,5 +4,5 @@ namespace GihanSoft.Framework.Web.Bootstrap.Endpoints;
 
 public interface IEndpointSetup
 {
-    void MapEndpoints(IEndpointRouteBuilder endpointRouteBuilder);
+    void ConfigureEndpoints(IEndpointRouteBuilder endpointRouteBuilder);
 }
