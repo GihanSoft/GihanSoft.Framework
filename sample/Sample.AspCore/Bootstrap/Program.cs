@@ -6,7 +6,7 @@ using Sample.AspCore.Bootstrap;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddFromServiceDescriptionProviders<Program>(new BootstrapServiceProvider(builder));
+builder.Services.AddServiceSetups<Program>(new BootstrapServiceProvider(builder));
 
 var app = builder.Build();
 
