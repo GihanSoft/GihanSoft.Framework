@@ -2,7 +2,7 @@ using System.Reflection;
 
 using Microsoft.Extensions.DependencyInjection;
 
-namespace GihanSoft.Framework.Bootstrap.Initializers;
+namespace GihanSoft.Framework.Web.Bootstrap.Initializers;
 
 public static class InitializerHelper
 {

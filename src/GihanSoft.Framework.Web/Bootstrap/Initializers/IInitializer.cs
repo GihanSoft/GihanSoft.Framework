@@ -1,4 +1,4 @@
-namespace GihanSoft.Framework.Bootstrap.Initializers;
+namespace GihanSoft.Framework.Web.Bootstrap.Initializers;
 
 public interface IInitializer
 {

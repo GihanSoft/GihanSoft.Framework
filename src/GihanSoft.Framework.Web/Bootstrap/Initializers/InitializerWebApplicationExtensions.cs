@@ -10,7 +10,7 @@ public static class InitializerWebApplicationExtensions
     {
         _ = app ?? throw new ArgumentNullException(nameof(app));
 
-        return Framework.Bootstrap.Initializers.InitializerHelper.RunInitializersAsync(app.Services, assemblies);
+        return InitializerHelper.RunInitializersAsync(app.Services, assemblies);
     }
 
     public static Task RunInitializersAsync(this WebApplication app, params Assembly[] assemblies)
