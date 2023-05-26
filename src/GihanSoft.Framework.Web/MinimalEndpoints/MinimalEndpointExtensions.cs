@@ -9,7 +9,7 @@ namespace Microsoft.AspNetCore.Builder;
 
 public static class MinimalEndpointExtensions
 {
-    public static TRouteBuilder MapMinimalEndpoints<TRouteBuilder>(this TRouteBuilder endpointRouteBuilder, IEnumerable<Assembly> assemblies)
+    public static TRouteBuilder MapMinimalEndpoints<TRouteBuilder>(this TRouteBuilder endpoints, IEnumerable<Assembly> assemblies)
         where TRouteBuilder : IEndpointRouteBuilder
     {
         var interfaceType = typeof(IMinimalEndpoint);
@@ -20,78 +20,78 @@ public static class MinimalEndpointExtensions
 
         foreach (var t in types)
         {
-            using var scope = endpointRouteBuilder.ServiceProvider.CreateScope();
+            using var scope = endpoints.ServiceProvider.CreateScope();
 
             var handler = t.GetProperty(nameof(IMinimalEndpoint.Handler))?.GetValue(null) as Delegate ??
                 throw new InvalidOperationException($"handler of minimal endpoint in type '{t.FullName}' is null");
 
             var endpoint = (IMinimalEndpoint)ActivatorUtilities.CreateInstance(scope.ServiceProvider, t);
-            var routeHandlerBuilder = endpointRouteBuilder.MapMethods(endpoint.Pattern, endpoint.HttpMethods.Select(m => m.Method), handler);
+            var routeHandlerBuilder = endpoints.MapMethods(endpoint.Pattern, endpoint.Methods, handler);
             endpoint.ConfigureEndpoint(routeHandlerBuilder);
         }
 
-        return endpointRouteBuilder;
+        return endpoints;
     }
 
-    public static TRouteBuilder MapMinimalEndpoints<TRouteBuilder>(this TRouteBuilder endpointRouteBuilder, params Assembly[] assemblies)
+    public static TRouteBuilder MapMinimalEndpoints<TRouteBuilder>(this TRouteBuilder endpoints, params Assembly[] assemblies)
         where TRouteBuilder : IEndpointRouteBuilder
     {
-        return MapMinimalEndpoints(endpointRouteBuilder, assemblies.AsEnumerable());
+        return MapMinimalEndpoints(endpoints, assemblies.AsEnumerable());
     }
 
-    public static TRouteBuilder MapMinimalEndpoints<TRouteBuilder>(this TRouteBuilder endpointRouteBuilder, IEnumerable<Type> types)
+    public static TRouteBuilder MapMinimalEndpoints<TRouteBuilder>(this TRouteBuilder endpoints, IEnumerable<Type> types)
         where TRouteBuilder : IEndpointRouteBuilder
     {
-        return MapMinimalEndpoints(endpointRouteBuilder, types.Select(t => t.Assembly));
+        return MapMinimalEndpoints(endpoints, types.Select(t => t.Assembly));
     }
 
-    public static TRouteBuilder MapMinimalEndpoints<TRouteBuilder>(this TRouteBuilder endpointRouteBuilder, params Type[] types)
+    public static TRouteBuilder MapMinimalEndpoints<TRouteBuilder>(this TRouteBuilder endpoints, params Type[] types)
         where TRouteBuilder : IEndpointRouteBuilder
     {
-        return MapMinimalEndpoints(endpointRouteBuilder, types.Select(t => t.Assembly));
+        return MapMinimalEndpoints(endpoints, types.Select(t => t.Assembly));
     }
 
-    public static TRouteBuilder MapMinimalEndpoints<TRouteBuilder, TMarker>(this TRouteBuilder endpointRouteBuilder)
+    public static TRouteBuilder MapMinimalEndpoints<TRouteBuilder, TMarker>(this TRouteBuilder endpoints)
         where TRouteBuilder : IEndpointRouteBuilder
     {
-        return MapMinimalEndpoints(endpointRouteBuilder, typeof(TMarker).Assembly);
+        return MapMinimalEndpoints(endpoints, typeof(TMarker).Assembly);
     }
 
-    public static TRouteBuilder MapMinimalEndpoints<TRouteBuilder, TMarker1, TMarker2>(this TRouteBuilder endpointRouteBuilder)
+    public static TRouteBuilder MapMinimalEndpoints<TRouteBuilder, TMarker1, TMarker2>(this TRouteBuilder endpoints)
         where TRouteBuilder : IEndpointRouteBuilder
     {
-        return MapMinimalEndpoints(endpointRouteBuilder, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly);
+        return MapMinimalEndpoints(endpoints, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly);
     }
 
-    public static TRouteBuilder MapMinimalEndpoints<TRouteBuilder, TMarker1, TMarker2, TMarker3>(this TRouteBuilder endpointRouteBuilder)
+    public static TRouteBuilder MapMinimalEndpoints<TRouteBuilder, TMarker1, TMarker2, TMarker3>(this TRouteBuilder endpoints)
         where TRouteBuilder : IEndpointRouteBuilder
     {
-        return MapMinimalEndpoints(endpointRouteBuilder, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly, typeof(TMarker3).Assembly);
+        return MapMinimalEndpoints(endpoints, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly, typeof(TMarker3).Assembly);
     }
 
-    public static TRouteBuilder MapMinimalEndpoints<TRouteBuilder, TMarker1, TMarker2, TMarker3, TMarker4>(this TRouteBuilder endpointRouteBuilder)
+    public static TRouteBuilder MapMinimalEndpoints<TRouteBuilder, TMarker1, TMarker2, TMarker3, TMarker4>(this TRouteBuilder endpoints)
         where TRouteBuilder : IEndpointRouteBuilder
     {
-        return MapMinimalEndpoints(endpointRouteBuilder, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly, typeof(TMarker3).Assembly, typeof(TMarker4).Assembly);
+        return MapMinimalEndpoints(endpoints, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly, typeof(TMarker3).Assembly, typeof(TMarker4).Assembly);
     }
 
-    public static IEndpointRouteBuilder MapMinimalEndpoints<TMarker>(this IEndpointRouteBuilder endpointRouteBuilder)
+    public static IEndpointRouteBuilder MapMinimalEndpoints<TMarker>(this IEndpointRouteBuilder endpoints)
     {
-        return MapMinimalEndpoints(endpointRouteBuilder, typeof(TMarker).Assembly);
+        return MapMinimalEndpoints(endpoints, typeof(TMarker).Assembly);
     }
 
-    public static IEndpointRouteBuilder MapMinimalEndpoints<TMarker1, TMarker2>(this IEndpointRouteBuilder endpointRouteBuilder)
+    public static IEndpointRouteBuilder MapMinimalEndpoints<TMarker1, TMarker2>(this IEndpointRouteBuilder endpoints)
     {
-        return MapMinimalEndpoints(endpointRouteBuilder, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly);
+        return MapMinimalEndpoints(endpoints, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly);
     }
 
-    public static IEndpointRouteBuilder MapMinimalEndpoints<TMarker1, TMarker2, TMarker3>(this IEndpointRouteBuilder endpointRouteBuilder)
+    public static IEndpointRouteBuilder MapMinimalEndpoints<TMarker1, TMarker2, TMarker3>(this IEndpointRouteBuilder endpoints)
     {
-        return MapMinimalEndpoints(endpointRouteBuilder, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly, typeof(TMarker3).Assembly);
+        return MapMinimalEndpoints(endpoints, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly, typeof(TMarker3).Assembly);
     }
 
-    public static IEndpointRouteBuilder MapMinimalEndpoints<TMarker1, TMarker2, TMarker3, TMarker4>(this IEndpointRouteBuilder endpointRouteBuilder)
+    public static IEndpointRouteBuilder MapMinimalEndpoints<TMarker1, TMarker2, TMarker3, TMarker4>(this IEndpointRouteBuilder endpoints)
     {
-        return MapMinimalEndpoints(endpointRouteBuilder, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly, typeof(TMarker3).Assembly, typeof(TMarker4).Assembly);
+        return MapMinimalEndpoints(endpoints, typeof(TMarker1).Assembly, typeof(TMarker2).Assembly, typeof(TMarker3).Assembly, typeof(TMarker4).Assembly);
     }
 }

@@ -5,7 +5,7 @@ namespace GihanSoft.Framework.Web.MinimalEndpoints;
 public interface IMinimalEndpoint
 {
     string Pattern { get; }
-    IEnumerable<HttpMethod> HttpMethods { get; }
+    IEnumerable<string> Methods { get; }
 
     void ConfigureEndpoint(RouteHandlerBuilder builder);
 
