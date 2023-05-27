@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GihanSoft.Framework.Hal\GihanSoft.Framework.Hal.csproj" />
     <ProjectReference Include="..\GihanSoft.Framework.Web\GihanSoft.Framework.Web.csproj" />
   </ItemGroup>
 
