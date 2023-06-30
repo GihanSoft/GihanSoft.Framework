@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GihanSoft.Framework.Functio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GihanSoft.Framework.Hal", "src\GihanSoft.Framework.Hal\GihanSoft.Framework.Hal.csproj", "{8C0B9B6A-1B77-4A00-9719-F5C97C1304E0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GihanSoft.Framework.EntityFrameworkCore", "src\GihanSoft.Framework.EntityFrameworkCore\GihanSoft.Framework.EntityFrameworkCore.csproj", "{54580168-BBC1-4F4E-810C-355782821160}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{8C0B9B6A-1B77-4A00-9719-F5C97C1304E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C0B9B6A-1B77-4A00-9719-F5C97C1304E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C0B9B6A-1B77-4A00-9719-F5C97C1304E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54580168-BBC1-4F4E-810C-355782821160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54580168-BBC1-4F4E-810C-355782821160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54580168-BBC1-4F4E-810C-355782821160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54580168-BBC1-4F4E-810C-355782821160}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{03CA5C3B-A4AC-42DE-A84C-6F727D00FC42} = {BB8FDCA1-51B4-4F9C-B152-4AB89FEF008D}
 		{F45CC0D6-EC37-4968-9E33-8632F69DBC86} = {18F81BAB-ACFD-46CA-AF14-8ACC4D4BC75B}
 		{8C0B9B6A-1B77-4A00-9719-F5C97C1304E0} = {18F81BAB-ACFD-46CA-AF14-8ACC4D4BC75B}
+		{54580168-BBC1-4F4E-810C-355782821160} = {18F81BAB-ACFD-46CA-AF14-8ACC4D4BC75B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0A517992-09AB-4C21-9188-222BD8BE071F}
