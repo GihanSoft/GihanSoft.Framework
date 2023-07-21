@@ -13,10 +13,10 @@ public class ProblemException : Exception
 
     protected ProblemException(SerializationInfo info, StreamingContext context) : base(info, context) { }
 
-    public required int Status { get; init; }
-    public required string ProblemType { get; init; }
+    public required int StatusCode { get; init; }
+    public string? ProblemType { get; init; }
     public string? Title { get; init; }
     public string? Detail { get; init; }
     public string? Instance { get; init; }
-    public IDictionary<string, object> Extensions { get; } = new Dictionary<string, object>(StringComparer.Ordinal);
+    public IDictionary<string, object?>? Extensions { get; init; }
 }
