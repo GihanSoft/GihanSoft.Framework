@@ -1,3 +1,4 @@
+using GihanSoft.Framework.Web.Bootstrap.ConditionalPipelineUse;
 using GihanSoft.Framework.Web.Bootstrap.Initializers;
 using GihanSoft.Framework.Web.Swagger;
 
@@ -16,6 +17,8 @@ builder.Services.AddEndpointsApiExplorer().AddSwaggerGen(opt =>
 DataServiceSetup.ConfigureServices(builder.Services);
 
 var app = builder.Build();
+
+app.If(app.Environment.IsDevelopment(), a => a.UseSwagger().UseSwaggerUI());
 
 if (app.Environment.IsDevelopment())
 {

@@ -4,9 +4,11 @@ namespace GihanSoft.Framework.Web.Bootstrap.ConditionalPipelineUse;
 
 public static class ApplicationBuilderExtensions
 {
-    public static ConditionalApplicationBuilder If(this IApplicationBuilder app, bool condition)
+    public static IApplicationBuilder If(this IApplicationBuilder app, bool condition, Func<IApplicationBuilder, IApplicationBuilder> func)
     {
-        _ = app ?? throw new ArgumentNullException(nameof(app));
-        return new ConditionalApplicationBuilder(app, condition);
+        ArgumentNullException.ThrowIfNull(app);
+        ArgumentNullException.ThrowIfNull(func);
+
+        return condition ? func(app) : app;
     }
 }
