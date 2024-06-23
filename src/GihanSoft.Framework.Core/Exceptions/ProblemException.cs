@@ -1,4 +1,4 @@
-namespace GihanSoft.Framework.Functional;
+namespace GihanSoft.Framework.Core.Exceptions;
 
 public class ProblemException : Exception
 {
