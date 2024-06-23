@@ -1,0 +1,25 @@
+<Solution>
+  <Folder Name="/[root]/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path=".gitmodules" />
+    <File Path="AssemblyInfo.cs" />
+    <File Path="BannedSymbols.txt" />
+    <File Path="global.json" />
+    <File Path="LICENSE.txt" />
+    <File Path="nuget.config" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/test/" />
+  <Folder Name="/src/">
+    <Project Path="src\GihanSoft.Framework.EntityFrameworkCore\GihanSoft.Framework.EntityFrameworkCore.csproj" />
+    <Project Path="src\GihanSoft.Framework.Functional\GihanSoft.Framework.Functional.csproj" />
+    <Project Path="src\GihanSoft.Framework.Hal\GihanSoft.Framework.Hal.csproj" />
+    <Project Path="src\GihanSoft.Framework.Web\GihanSoft.Framework.Web.csproj" />
+    <Project Path="src\GihanSoft.Framework\GihanSoft.Framework.csproj" />
+  </Folder>
+  <Folder Name="/sample/">
+    <Project Path="sample\Sample.AspCore\Sample.AspCore.csproj" />
+  </Folder>
+</Solution>
