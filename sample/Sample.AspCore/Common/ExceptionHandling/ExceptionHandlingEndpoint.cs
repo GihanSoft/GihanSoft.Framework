@@ -7,9 +7,9 @@ namespace Sample.AspCore.Common.ExceptionHandling;
 public sealed class ExceptionHandlingEndpoint : IMinimalEndpoint
 {
     public string Pattern => "/500";
-    public IEnumerable<HttpMethod> HttpMethods => new[] { HttpMethod.Get };
+    public IEnumerable<string> Methods => ["GET"];
 
-    public void ConfigureEndpoint(IEndpointConventionBuilder builder) =>
+    public void ConfigureEndpoint(RouteHandlerBuilder builder) =>
         builder.ExcludeFromDescription();
 
     public static Delegate Handler => HandleAsync;

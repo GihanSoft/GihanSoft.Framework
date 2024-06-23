@@ -1,4 +1,4 @@
-using GihanSoft.Framework.Bootstrap.Initializers;
+using GihanSoft.Framework.Web.Bootstrap.Initializers;
 
 using Microsoft.EntityFrameworkCore;
 

@@ -1,13 +1,12 @@
-using GihanSoft.Framework.Bootstrap.Services;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Sample.AspCore.Common.Data;
 
-public class DataServiceSetup : IServiceSetup
+public static class DataServiceSetup
 {
-    public void ConfigureServices(IServiceCollection services)
+    public static void ConfigureServices(IServiceCollection services)
     {
         services.AddDbContext<AppDbContext>((serviceProvider, opt) =>
         {

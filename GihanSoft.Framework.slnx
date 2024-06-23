@@ -6,6 +6,7 @@
     <File Path=".gitmodules" />
     <File Path="AssemblyInfo.cs" />
     <File Path="BannedSymbols.txt" />
+    <File Path="Directory.Build.props" />
     <File Path="global.json" />
     <File Path="LICENSE.txt" />
     <File Path="nuget.config" />
