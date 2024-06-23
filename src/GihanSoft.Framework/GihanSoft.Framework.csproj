@@ -5,7 +5,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GihanSoft.Framework.EntityFrameworkCore\GihanSoft.Framework.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\GihanSoft.Framework.Core\GihanSoft.Framework.Core.csproj" />
     <ProjectReference Include="..\GihanSoft.Framework.Web\GihanSoft.Framework.Web.csproj" />
   </ItemGroup>

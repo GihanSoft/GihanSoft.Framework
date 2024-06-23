@@ -15,11 +15,13 @@
   <Folder Name="/test/" />
   <Folder Name="/src/">
     <Project Path="src\GihanSoft.Framework.Core\GihanSoft.Framework.Core.csproj" Type="Classic C#" />
-    <Project Path="src\GihanSoft.Framework.EntityFrameworkCore\GihanSoft.Framework.EntityFrameworkCore.csproj" />
     <Project Path="src\GihanSoft.Framework.Web\GihanSoft.Framework.Web.csproj" />
     <Project Path="src\GihanSoft.Framework\GihanSoft.Framework.csproj" />
   </Folder>
   <Folder Name="/sample/">
+    <Project Path="sample\Sample.AspCore\Sample.AspCore.csproj" />
+  </Folder>
+</Solution>lder Name="/sample/">
     <Project Path="sample\Sample.AspCore\Sample.AspCore.csproj" />
   </Folder>
 </Solution>th="sample\Sample.AspCore\Sample.AspCore.csproj" />
