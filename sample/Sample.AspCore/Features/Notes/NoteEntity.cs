@@ -1,5 +1,8 @@
+using GihanSoft.Framework.Web.Swagger;
+
 namespace Sample.AspCore.Features.Notes;
 
+[SwaggerSchema("note")]
 public class NoteEntity
 {
     public required int Id { get; init; }

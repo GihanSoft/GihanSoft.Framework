@@ -17,7 +17,7 @@ public class NotesController : ControllerBase
     }
 
     [HttpGet]
-    public async ValueTask<IActionResult> Query()
+    public async ValueTask<ActionResult<NoteEntity[]>> Query()
     {
         var notes = await appDbContext.Notes.ToListAsync();
         return Ok(notes);

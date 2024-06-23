@@ -1,4 +1,5 @@
 using GihanSoft.Framework.Web.Bootstrap.Initializers;
+using GihanSoft.Framework.Web.Swagger;
 
 using Sample.AspCore.Common.Data;
 
@@ -7,7 +8,10 @@ using Sample.AspCore.Common.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer().AddSwaggerGen();
+builder.Services.AddEndpointsApiExplorer().AddSwaggerGen(opt =>
+{
+    opt.CustomSchemaIds(SwaggerSchemaAttributeIdSelector.SchemaSelector);
+});
 
 DataServiceSetup.ConfigureServices(builder.Services);
 
