@@ -1,19 +1,14 @@
-using GihanSoft.Framework.Web.Bootstrap.Initializers;
+using GihanSoft.Framework.Web.Bootstrap.Initialization;
 
 using Microsoft.EntityFrameworkCore;
 
 namespace Sample.AspCore.Common.Data;
 
-public class DataInitializer : IInitializer
+internal class DataInitializer(AppDbContext db) : IInitializer
 {
-    private readonly AppDbContext db;
+    private readonly AppDbContext db = db;
 
-    public DataInitializer(AppDbContext db)
-    {
-        this.db = db;
-    }
-
-    public static int Priority { get; }
+    public int Priority { get; }
 
     public async Task InitializeAsync()
     {

@@ -24,6 +24,7 @@
     <AnalysisMode>All</AnalysisMode>
     <Features>strict</Features>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(Configuration)' == 'Debug'">

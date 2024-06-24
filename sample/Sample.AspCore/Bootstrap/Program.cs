@@ -1,5 +1,5 @@
 using GihanSoft.Framework.Web.Bootstrap.ConditionalPipelineUse;
-using GihanSoft.Framework.Web.Bootstrap.Initializers;
+using GihanSoft.Framework.Web.Bootstrap.Initialization;
 using GihanSoft.Framework.Web.Swagger;
 
 using Sample.AspCore.Common.Data;

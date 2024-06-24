@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Sample.AspCore.Common.Data;
 
-public static class DataServiceSetup
+internal static class DataServiceSetup
 {
     public static void ConfigureServices(IServiceCollection services)
     {

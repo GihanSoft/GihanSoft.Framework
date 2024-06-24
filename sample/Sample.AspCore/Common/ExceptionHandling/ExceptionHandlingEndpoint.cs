@@ -1,10 +1,8 @@
-using GihanSoft.Framework.Web.MinimalEndpoints;
-
 using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Sample.AspCore.Common.ExceptionHandling;
 
-public sealed class ExceptionHandlingEndpoint : IMinimalEndpoint
+internal sealed class ExceptionHandlingEndpoint
 {
     public string Pattern => "/500";
     public IEnumerable<string> Methods => ["GET"];
