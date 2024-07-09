@@ -1,7 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
 
-namespace GihanSoft.Framework.Hal;
+namespace GihanSoft.Framework.Web.Hal;
 
 /// <summary>
 /// HAL link object
