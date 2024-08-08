@@ -1,1 +1,6 @@
-<Project Sdk="Microsoft.NET.Sdk" />
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <None Include="GihanSoft.Framework.Core.targets" Pack="true" PackagePath="build" Visible="true" />
+    <None Include=".\**\*.typedid" Pack="true" PackagePath="build/AdditionalFiles" Visible="true" />
+  </ItemGroup>
+</Project>
