@@ -1,0 +1,64 @@
+    partial struct PLACEHOLDERID :
+        global::System.IParsable<PLACEHOLDERID>, global::System.ISpanParsable<PLACEHOLDERID>, global::System.IUtf8SpanParsable<PLACEHOLDERID>
+    {
+        public static PLACEHOLDERID Parse(string input) => new(int.Parse(input));
+
+        /// <inheritdoc cref="global::System.IParsable{TSelf}"/>
+        public static PLACEHOLDERID Parse(string input, global::System.IFormatProvider? provider) => new(int.Parse(input, provider));
+
+        public static PLACEHOLDERID Parse(global::System.ReadOnlySpan<char> input) => new(int.Parse(input));
+
+        /// <inheritdoc cref="global::System.ISpanParsable{TSelf}"/>
+        public static PLACEHOLDERID Parse(global::System.ReadOnlySpan<char> input, global::System.IFormatProvider? provider) => new(int.Parse(input, provider));
+
+        /// <inheritdoc cref="global::System.IUtf8SpanParsable{TSelf}.Parse(global::System.ReadOnlySpan{byte}, global::System.IFormatProvider?)" />
+        public static PLACEHOLDERID Parse(global::System.ReadOnlySpan<byte> utf8Text, global::System.IFormatProvider? provider) => new(int.Parse(utf8Text, provider));
+
+        /// <inheritdoc cref="global::System.IParsable{TSelf}"/>
+        public static bool TryParse(
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)] string? input,
+            global::System.IFormatProvider? provider,
+            out PLACEHOLDERID result)
+        {
+            if (input is null)
+            {
+                result = default;
+                return false;
+            }
+
+            if (int.TryParse(input, provider, out var value))
+            {
+                result = new(value);
+                return true;
+            }
+
+            result = default;
+            return false;
+        }
+
+        /// <inheritdoc cref="global::System.ISpanParsable{TSelf}"/>
+        public static bool TryParse(global::System.ReadOnlySpan<char> input, global::System.IFormatProvider? provider, out PLACEHOLDERID result)
+        {
+            if (int.TryParse(input, provider, out var guid))
+            {
+                result = new(guid);
+                return true;
+            }
+
+            result = default;
+            return false;
+        }
+
+        /// <inheritdoc cref="global::System.IUtf8SpanParsable{TSelf}.TryParse(global::System.ReadOnlySpan{byte}, global::System.IFormatProvider?, out TSelf)" />
+        public static bool TryParse(global::System.ReadOnlySpan<byte> utf8Text, global::System.IFormatProvider? provider, out PLACEHOLDERID result)
+        {
+            if (int.TryParse(utf8Text, provider, out var intResult))
+            {
+                result = new PLACEHOLDERID(intResult);
+                return true;
+            }
+
+            result = default;
+            return false;
+        }
+    }

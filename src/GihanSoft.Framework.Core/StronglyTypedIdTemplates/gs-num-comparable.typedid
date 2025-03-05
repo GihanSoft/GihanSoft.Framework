@@ -1,0 +1,11 @@
+    partial struct PLACEHOLDERID :
+        global::System.IComparable<PLACEHOLDERID>, global::System.Numerics.IComparisonOperators<PLACEHOLDERID, PLACEHOLDERID, bool>,
+    {
+        public static bool operator >  (PLACEHOLDERID a, PLACEHOLDERID b) => a.Value > b.Value;
+        public static bool operator <  (PLACEHOLDERID a, PLACEHOLDERID b) => a.Value < b.Value;
+        public static bool operator >=  (PLACEHOLDERID a, PLACEHOLDERID b) => a.Value >= b.Value;
+        public static bool operator <=  (PLACEHOLDERID a, PLACEHOLDERID b) => a.Value <= b.Value;
+
+        /// <inheritdoc cref="global::System.IComparable{TSelf}"/>
+        public int CompareTo(PLACEHOLDERID other) => Value.CompareTo(other.Value);
+    }

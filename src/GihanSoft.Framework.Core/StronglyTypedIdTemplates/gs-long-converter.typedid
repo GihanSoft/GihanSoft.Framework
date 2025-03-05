@@ -1,0 +1,44 @@
+    [global::System.ComponentModel.TypeConverter(typeof(PLACEHOLDERIDTypeConverter))]
+    partial struct PLACEHOLDERID
+    {
+        public partial class PLACEHOLDERIDTypeConverter : global::System.ComponentModel.TypeConverter
+        {
+            public override bool CanConvertFrom(global::System.ComponentModel.ITypeDescriptorContext? context, global::System.Type sourceType)
+            {
+                return sourceType == typeof(long) || sourceType == typeof(string) || base.CanConvertFrom(context, sourceType);
+            }
+
+            public override object? ConvertFrom(global::System.ComponentModel.ITypeDescriptorContext? context, global::System.Globalization.CultureInfo? culture, object value)
+            {
+                return value switch
+                {
+                    long longValue => new PLACEHOLDERID(longValue),
+                    string stringValue when !string.IsNullOrEmpty(stringValue) && long.TryParse(stringValue, out var result) => new PLACEHOLDERID(result),
+                    _ => base.ConvertFrom(context, culture, value),
+                };
+            }
+
+            public override bool CanConvertTo(global::System.ComponentModel.ITypeDescriptorContext? context, global::System.Type? sourceType)
+            {
+                return sourceType == typeof(long) || sourceType == typeof(string) || base.CanConvertTo(context, sourceType);
+            }
+
+            public override object? ConvertTo(global::System.ComponentModel.ITypeDescriptorContext? context, global::System.Globalization.CultureInfo? culture, object? value, global::System.Type destinationType)
+            {
+                if (value is PLACEHOLDERID idValue)
+                {
+                    if (destinationType == typeof(long))
+                    {
+                        return idValue.Value;
+                    }
+
+                    if (destinationType == typeof(string))
+                    {
+                        return idValue.Value.ToString(global::System.Globalization.CultureInfo.InvariantCulture);
+                    }
+                }
+
+                return base.ConvertTo(context, culture, value, destinationType);
+            }
+        }
+    }
