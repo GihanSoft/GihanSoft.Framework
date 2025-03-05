@@ -8,11 +8,11 @@ public interface IInitializer
     /// <summary>
     /// priority for running order. higher means sooner
     /// </summary>
-    int Priority { get; }
+    public int Priority { get; }
 
     /// <summary>
     /// Initialization method
     /// </summary>
     /// <returns></returns>
-    Task InitializeAsync();
+    public Task InitializeAsync();
 }
