@@ -7,6 +7,7 @@
     <File Path="AssemblyInfo.cs" />
     <File Path="BannedSymbols.txt" />
     <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
     <File Path="global.json" />
     <File Path="LICENSE.txt" />
     <File Path="nuget.config" />
@@ -14,7 +15,7 @@
   </Folder>
   <Folder Name="/test/" />
   <Folder Name="/src/">
-    <Project Path="src\GihanSoft.Framework.Core\GihanSoft.Framework.Core.csproj" Type="Classic C#" />
+    <Project Path="src\GihanSoft.Framework.Core\GihanSoft.Framework.Core.csproj" />
     <Project Path="src\GihanSoft.Framework.Web\GihanSoft.Framework.Web.csproj" />
     <Project Path="src\GihanSoft.Framework\GihanSoft.Framework.csproj" />
   </Folder>
